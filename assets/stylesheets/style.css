@@ -49,7 +49,7 @@ body {
 }
 
 
-/* Main */
+/* Main INDEX.html*/
 
 main {
   margin: 10%;
@@ -92,6 +92,21 @@ main a:hover {
   color: rgb(50, 120, 180);
 }
 
+/* Main CLASSES.html */
+
+.classes-dropdown {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.classes-dropdown > button, .classes-dropdown > button:hover, .classes-dropdown > button:focus{
+  background-color: rgba(80, 40, 20, 0.5);
+}
+
+.classes-dropdown h2 {
+  font-family: 'MedievalSharp', cursive;
+}
 /* Footer */
 
 footer > .panel {
