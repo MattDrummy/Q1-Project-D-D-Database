@@ -28,13 +28,11 @@ body {
 .page-header {
   margin: 10px 20px;
   box-sizing: border-box;
-
 }
 
 .nav {
   font-size: 1.75em;
   margin-top: 20px;
-
 }
 
 .nav a {
@@ -60,13 +58,15 @@ main {
   text-align: center;
 }
 
-.intro + p {
+.intro+p {
   font-size: 2em;
 }
-.row > div {
+
+.row>div {
   width: 290px;
   float: left;
 }
+
 .thumbnail {
   border: 1px solid #222222;
   padding: 0;
@@ -87,10 +87,12 @@ main {
 main a {
   color: #ffffff;
 }
+
 main a:hover {
   text-decoration: none;
   color: rgb(50, 120, 180);
 }
+
 
 /* Main CLASSES.html */
 
@@ -100,22 +102,39 @@ main a:hover {
   justify-content: center;
   flex-direction: column;
 }
-.classes-dropdown > button, .classes-dropdown > button:hover, .classes-dropdown > button:focus{
+
+.classes-dropdown>button, .classes-dropdown>button:hover, .classes-dropdown>button:focus {
   background-color: rgba(80, 40, 20, 0.5);
 }
 
 .classes-dropdown h2 {
   font-family: 'MedievalSharp', cursive;
 }
+
+.classes-dropdown .well {
+  font-family: 'Roboto', sans-serif;
+}
+
+
 /* Footer */
 
-footer > .panel {
+footer {
+  font-family: 'Roboto', sans-serif;
+}
+
+footer>.panel {
   background-color: rgba(80, 40, 20, 0.5);
   box-sizing: border-box;
   padding: 10px 10%;
   margin: 20px 0 0 0;
   text-align: justify;
 }
+
+footer>a {
+  margin-left: 10%;
+}
+
+
 /* Size Change */
 
 @media (max-width: 1100px) {
