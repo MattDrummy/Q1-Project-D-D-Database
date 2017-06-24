@@ -1,0 +1,110 @@
+/* Body */
+
+body {
+  font-family: 'MedievalSharp', cursive;
+  background-image: url("https://inspirationhut.net/wp-content/uploads/2012/11/Grungy-Paper-Texture-3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* Header */
+
+.navbar {
+  background-color: rgba(80, 40, 20, 0.5);
+}
+
+.navbar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.navbar-brand {
+  align-self: flex-start;
+}
+
+.page-header {
+  margin: 10px 20px;
+  box-sizing: border-box;
+
+}
+
+.nav {
+  font-size: 1.75em;
+  margin-top: 20px;
+
+}
+
+.nav a {
+  color: #000000;
+}
+
+.nav li {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 5px 5px 0 0;
+  box-sizing: border-box;
+  border: 1px solid grey;
+}
+
+
+/* Main */
+
+main {
+  margin: 10%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.intro {
+  text-align: center;
+}
+
+.intro + p {
+  font-size: 2em;
+}
+.row > div {
+  width: 290px;
+  float: left;
+}
+.thumbnail {
+  border: 1px solid #222222;
+  padding: 0;
+}
+
+.thumbnail p {
+  text-align: center;
+  font-family: 'MedievalSharp', cursive;
+  font-size: 2em;
+  background-color: #222222;
+  margin-bottom: 0;
+}
+
+.thumbnail img {
+  height: 350px;
+}
+
+main a {
+  color: #ffffff;
+}
+main a:hover {
+  text-decoration: none;
+  color: rgb(52, 121, 183);
+}
+
+/* Footer */
+
+footer > .panel {
+  background-color: rgba(80, 40, 20, 0.5);
+  box-sizing: border-box;
+  padding: 10px 10%;
+  margin: 20px 0 0 0;
+  text-align: justify;
+}
+/* Size Change */
+
+@media (max-width: 1100px) {
+  .page-header {
+    display: none;
+  }
+}
