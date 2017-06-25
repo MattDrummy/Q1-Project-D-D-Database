@@ -20,7 +20,7 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">
+          <a name="brand" class="navbar-brand" href="index.html">
             <img height="50px" width="100px" alt="Brand" src="http://www.questmerch.com/wp-content/uploads/2017/01/DD_Transparent.png">
           </a>
           <h1 class="page-header">Dungeons & Dragons</h1>
@@ -28,8 +28,8 @@
             <li role="presentation"><a href="index.html">Home</a></li>
             <li role="presentation" class="active"><a href="monsters.html">Monsters</a></li>
             <li role="presentation"><a href="spells.html">Spells</a></li>
-            <li role="presentation"><a href="classes.html">Classes</a></li>
             <li role="presentation"><a href="equipment.html">Equipment</a></li>
+            <li role="presentation"><a href="classes.html">Classes</a></li>
           </ul>
         </div>
       </div>
@@ -38,49 +38,40 @@
 
   <!--Main-->
 
-  <main class="monster-page">
-    <h1>Search for the monster of your choice by several criteria</h1>
-    <section class="monster-section">
-      <h2>You can input the name of the monster in this line</h2>
+  <main class="search-page">
+    <h1>Welcome to the Monstrous Beastiary!</h1>
+    <p>Here you can search for a list of monsters based on your seach criteria.</p>
+    <section class="search-section">
+      <h2>You can input the name of the monster here...</h2>
       <form class="input-group">
         <input type="text" class="form-control" placeholder="Name of Monster" aria-label="Name of Monster">
-        <span class="input-group-addon"><button type="button" name="search">Search</button></span>
+        <span class="input-group-addon"><button id="form1Search" type="submit" name="search"><a class="search-link" href="#searchResult">Search</a></button></span>
       </form>
     </section>
-    <section class="monster-section">
-      <form class="monster-form">
-        <h2>Or, fill out any of the text boxes below.</h2>
+    <section class="search-section">
+      <h2>Or, fill out any of the form below.</h2>
+      <form class="search-form">
         <div class="form-group">
-          <label for="monsterSize"><h3>Monster Size</h3><br><p>Write the size category of the monster here.</p></label>
+          <label for="monsterSize"><h3>Monster Size</h3><p>The size category of the monster.</p></label>
           <input type="text" class="form-control" id="monsterSize" placeholder="Tiny, Small, Medium, Large, Huge, or Gargantuan">
         </div>
         <div class="form-group">
-          <label for="monsterType"><h3>Monster Type</h3><br><p>Write the type of the monster here.</p></label>
+          <label for="monsterType"><h3>Monster Type</h3><p>The type of monster in its description.</p></label>
           <input type="text" class="form-control" id="monsterType" placeholder="Aberration, Dragon, Undead, etc.">
         </div>
         <div class="form-group">
-          <label for="challengeRating"><h3>Challenge Rating</h3><br><p>Enter a whole number greater than or equal to zero.</p></label>
+          <label for="challengeRating"><h3>Challenge Rating</h3><p>A whole number greater than or equal to zero.</p></label>
           <input type="text" class="form-control" id="challengeRating" placeholder="0,1,2,3...etc">
         </div>
         <div class="form-group">
-          <label for="monsterSenses"><h3>Monster Senses</h3><br><p>Write a monster sense in the box below.</p></label>
-          <input type="text" class="form-control" id="monsterSenses" placeholder="Truesight, Darkvision, Tremorsense, etc.">
-        </div>
-        <div class="form-group">
-          <label for="monsterMovement"><h3>Monster Movement</h3><br><p>Write a type of monster movement, you can also write a movement speed.</p></label>
-          <input type="text" class="form-control" id="monsterMovement" placeholder="Climb, Swim, Fly, etc. or 10, 20, 30, 40, etc.">
-        </div>
-        <div class="form-group">
           <label for="monsterAlignment"><h3>Monster Alignment</h3><p>Choose from one of these alignments or select Any Alignment to leave this empty</p></label>
-          <select name="monsterAlignment">
+          <select name="alignment" id="monsterAlignment">
             <optgroup label="Alignment">
               <option value="" selected>Any Alignment</option>
               <option value="lawful">Any Lawful</option>
               <option value="chaotic">Any Chaotic</option>
               <option value="good">Any Good</option>
               <option value="evil">Any Evil</option>
-              <option value="any non-good">Any Non-Good</option>
-              <option value="any non-lawful">Any Non-Lawful</option>
               <option value="neutral">Any Neutral</option>
               <option value="neutral good">Neutral Good</option>
               <option value="neutral evil">Neutral Evil</option>
@@ -90,14 +81,20 @@
               <option value="chaotic evil">Chaotic Evil</option>
               <option value="chaotic neutral">Chaotic Neutral</option>
               <option value="chaotic good">Chaotic Good</option>
+              <option value="any non-good">Any Non-Good</option>
+              <option value="any non-lawful">Any Non-Lawful</option>
             </optgroup>
           </select>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button id="form2Search" type="button" class="form2btn btn btn-default">Search</button>
+        <button class="form2btn btn btn-default" type="reset" name="reset">Reset</button>
       </form>
     </section>
-    <section class="monster-section">
-
+    <section id="searchResult" class="search-section">
+      <a name="searchResult"></a>
+      <ul>
+        
+      </ul>
     </section>
   </main>
 
