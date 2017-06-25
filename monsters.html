@@ -43,9 +43,9 @@
     <p>Here you can search for a list of monsters based on your seach criteria.</p>
     <section class="search-section">
       <h2>You can input the name of the monster here...</h2>
-      <form class="input-group">
+      <form id="nameSearch" class="input-group">
         <input type="text" class="form-control" placeholder="Name of Monster" aria-label="Name of Monster">
-        <span class="input-group-addon"><button id="form1Search" type="submit" name="search"><a class="search-link" href="#searchResult">Search</a></button></span>
+        <span class="input-group-addon"><button type="button" name="search"><a class="search-link" href="#searchResult">Search</a></button></span>
       </form>
     </section>
     <section class="search-section">
@@ -86,14 +86,14 @@
             </optgroup>
           </select>
         </div>
-        <button id="form2Search" type="button" class="form2btn btn btn-default">Search</button>
-        <button class="form2btn btn btn-default" type="reset" name="reset">Reset</button>
+        <button id="formSearch" type="button" class="formBtn btn btn-default">Search</button>
+        <button class="formBtn btn btn-default" type="reset" name="reset">Reset</button>
       </form>
     </section>
     <section id="searchResult" class="search-section">
       <a name="searchResult"></a>
       <ul>
-        
+
       </ul>
     </section>
   </main>
