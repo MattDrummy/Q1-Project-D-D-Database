@@ -167,7 +167,9 @@ footer>a {
   }
   .nav {
     border: 0;
-    font-size: 1.25em;
+    font-size: 2em;
+    display: flex;
+    flex-direction: column;
   }
   .navbar-brand {
     float: none;
@@ -175,7 +177,5 @@ footer>a {
   footer a {
     text-align: left;
   }
-  .thumbnail {
-    margin: 10px 50px;
-  }
+
 }
