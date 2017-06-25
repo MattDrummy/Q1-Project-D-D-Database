@@ -52,7 +52,6 @@ body {
 main {
   margin: 5% 10%;
   font-family: 'Roboto', sans-serif;
-
 }
 
 .intro {
@@ -70,6 +69,7 @@ main {
   align-items: center;
   padding: 20px 20px;
 }
+
 .row>div {
   width: 290px;
 }
@@ -131,7 +131,26 @@ main a:hover {
   width: 100px;
 }
 
+/* Main MONSTER.html */
 
+.monster-form {
+  padding: 20px;
+}
+
+.monster-page h3, .monster-page h2, .monster-page h1 {
+  font-family: 'MedievalSharp', cursive;
+}
+
+.monster-section {
+  border: 1px solid rgb(180, 180, 180);
+  padding: 20px;
+  margin: 20px;
+}
+
+.form-group select {
+  display: block;
+  font-size: 1.5em;
+}
 /* Footer */
 
 footer {
@@ -177,5 +196,4 @@ footer>a {
   footer a {
     text-align: left;
   }
-
 }
