@@ -45,14 +45,14 @@
     </section>
     <section class="search-section">
       <h2>You can input the name of the equipment here...</h2>
-      <form id="nameSearch"class="input-group">
+      <form action="equipment.html#searchResult" id="nameSearch"class="input-group">
         <input type="text" class="form-control" placeholder="Name of Equipment">
-        <span class="input-group-addon"><button type="button" name="search"><a class="search-link" href="#searchResult">Search</a></button></span>
+        <span class="input-group-addon"><button type="submit" name="search">Search</button></span>
       </form>
     </section>
     <section class="search-section">
       <h2>Or, fill out any of the form below.</h2>
-      <form class="search-form">
+      <form  action="equipment.html#searchResult" id="formSearch" class="search-form">
         <div class="form-group">
           <label for="equipmentCategory"><h3>Equipment Category</h3><p>Choose from this list of equipment categories.</p></label>
           <select name="equipment_category" id="equipmentCategory">
@@ -65,12 +65,11 @@
             </optgroup>
           </select>
         </div>
-        <button id="formSearch" type="button" class="formBtn btn btn-default">Search</button>
+        <button type="submit" class="formBtn btn btn-default">Search</button>
         <button class="formBtn btn btn-default" type="reset" name="reset">Reset</button>
       </form>
     </section>
     <section id="searchResult" class="search-section">
-      <a name="searchResult"></a>
       <table class="table table-striped">
 
       </table>

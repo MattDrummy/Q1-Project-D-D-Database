@@ -45,14 +45,14 @@
     </section>
     <section class="search-section">
       <h2>You can input the name of the monster here...</h2>
-      <form id="nameSearch" class="input-group">
+      <form id="nameSearch" action="monsters.html#searchResult"  class="input-group">
         <input type="text" class="form-control" placeholder="Name of Monster" aria-label="Name of Monster">
-        <span class="input-group-addon"><button type="button" name="search"><a class="search-link" href="#searchResult">Search</a></button></span>
+        <span class="input-group-addon"><button type="submit" name="search">Search</button></span>
       </form>
     </section>
     <section class="search-section">
       <h2>Or, fill out any of the form below.</h2>
-      <form class="search-form">
+      <form action="monsters.html#searchResult" id="formSearch" class="search-form">
         <div class="form-group">
           <label for="monsterSize"><h3>Monster Size</h3><p>The size category of the monster.</p></label>
           <input type="text" class="form-control" id="monsterSize" placeholder="Tiny, Small, Medium, Large, Huge, or Gargantuan">
@@ -69,7 +69,7 @@
           <label for="monsterAlignment"><h3>Monster Alignment</h3><p>Choose from one of these alignments or select Any Alignment to leave this empty</p></label>
           <select name="alignment" id="monsterAlignment">
             <optgroup label="Alignment">
-              <option value="" selected>Any Alignment</option>
+              <option value="">Any Alignment</option>
               <option value="lawful">Any Lawful</option>
               <option value="chaotic">Any Chaotic</option>
               <option value="good">Any Good</option>
@@ -88,15 +88,12 @@
             </optgroup>
           </select>
         </div>
-        <button id="formSearch" type="button" class="formBtn btn btn-default">Search</button>
+        <button type="submit" class="formBtn btn btn-default">Search</button>
         <button class="formBtn btn btn-default" type="reset" name="reset">Reset</button>
       </form>
     </section>
     <section id="searchResult" class="search-section">
-      <a name="searchResult"></a>
-      <ul>
-
-      </ul>
+  
     </section>
   </main>
 
