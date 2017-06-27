@@ -168,16 +168,17 @@ main {
 
 #searchResult li {
   font-size: 1.5em;
+  list-style: none;
 }
 
-.monster {
+.list {
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.3);
   border: 1px solid black;
   font-size: 0.8em;
 }
 
-.monsterBtn {
+.listBtn {
   padding: 5px;
   margin-bottom: 10px;
   background-color: white;
