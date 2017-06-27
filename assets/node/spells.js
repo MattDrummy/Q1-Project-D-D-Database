@@ -18,7 +18,6 @@ function nameSearchSubmit(event) {
   window.location.hash = 'nameSearch'
   window.location.hash = 'searchResult';
   $.get(url).then(function(data) {
-    console.log(data);
     var newData = searchDataByName(data, $('#nameSearch input').val());
     createList(newData);
   })
