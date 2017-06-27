@@ -11,7 +11,8 @@ body {
 /* Header */
 
 .navbar {
-  background-color: rgba(80, 40, 20, 0.5);
+  background-color: rgba(80, 40, 20, 0.2);
+  border: 0;
 }
 
 .navbar-header {
@@ -44,6 +45,9 @@ body {
   border-radius: 5px 5px 0 0;
   box-sizing: border-box;
   border: 1px solid grey;
+  border-bottom: 0;
+  margin-right: 5px;
+
 }
 
 
@@ -150,6 +154,7 @@ main {
   border: 1px solid #9f9f9f;
   padding: 20px;
   margin: 20px;
+  background-color: rgba(80, 40, 20, 0.2)
 }
 
 .form-group select {

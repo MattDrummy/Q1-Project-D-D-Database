@@ -14,12 +14,26 @@ $equipmentCategory.change(updateForm);
 
 function updateForm(event) {
   $.get(url).then(function(data) {
+    try {
+      var $removeMe = $('#newForm');
+      var $submitButton = $('#submitButton');
+      var $resetButton = $('#resetButton');
+      $removeMe.remove();
+      $submitButton.remove();
+      $resetButton.remove();
+    } catch (e) {
+
+    }
     var equipment = createEquipment($equipmentCategory.val());
-    var resultArray = filterForm(data);
-    /* THIS IS WHERE YOU LEFT OFF */
-
-    /* CONTINUE FROM HERE */
-
+    var resultArray = filterForm(data, equipment);
+    $formSearch.append($('<div id="newForm" class="form-group"><label for="lesserCategory"><h3>Lesser Category</h3><p>Next, choose from this list of lesser categories.</p></label><select name="lesserCategory" id="lesserCategory"></div>'));
+    $formSearch.append($('<button id="submitButton" type="submit" class="formBtn btn btn-default">Search</button>'));
+    $formSearch.append($('<button id="resetButton" class="formBtn btn btn-default" type="reset" name="reset">Reset</button>'));
+    var $newForm = $('#lesserCategory');
+    $newForm.append('<option value="" disabled selected>Choose One</option>');
+    for (var i = 0; i < resultArray.length; i++) {
+      $newForm.append('<option value="' + resultArray[i] + '">' + resultArray[i] + '</option>');
+    }
   })
 }
 
@@ -46,8 +60,8 @@ function createEquipment(category) {
   return equipment;
 }
 
-function filterForm(data) {
-  var result = result.filter(function(element) {
+function filterForm(data, equipment) {
+  var result = data.filter(function(element) {
     if (element.equipment_category === $equipmentCategory.val()) {
       return element;
     }
@@ -62,7 +76,7 @@ function filterForm(data) {
   }
   var tempArray = [];
   for (var variable in tempObj) {
-    tempArray.push(tempObj);
+    tempArray.push(variable);
   }
   return tempArray;
 }
@@ -84,10 +98,11 @@ function formSearchSubmit(event) {
   $.get(url).then(function(data) {
 
     /*This is the information gathered from the page*/
+    var $lesserCategory = $('#lesserCategory');
     var newData = searchDataByForm(
       data,
       $equipmentCategory.val(),
-      $lesserCategory.val()
+      $lesserCategory.val(),
     );
     /*This data can be changed based on the page*/
 
@@ -108,12 +123,25 @@ function searchDataByName(data, name) {
 
 function searchDataByForm(data, category1, category2) {
   var result = data;
-  console.log(result);
+  var lesserEquipment = createEquipment($equipmentCategory.val());
   /* This is the filtering for the equipment Page */
   result = result.filter(function(element) {
     if (element !== undefined || element !== null) {
       if (element.equipment_category === category1) {
         return element;
+      }
+    }
+  })
+  result = result.filter(function(element) {
+    if (element !== undefined || element !== null) {
+      if (element[lesserEquipment].name !== undefined) {
+        if (element[lesserEquipment].name === category2) {
+          return element;
+        }
+      } else {
+        if (element[lesserEquipment] === category2) {
+          return element;
+        }
       }
     }
   })
@@ -139,7 +167,7 @@ function createList(newData) {
     if (item.category_range !== undefined) {
       $listData.append('<p>Weapon Category: ' + item.category_range + '</p>');
     } else if (item['armor_category:'] !== undefined) {
-      if (item['armor_category'].name !== undefined) {
+      if (item['armor_category:'].name !== undefined) {
         $listData.append('<p>Armor Category: ' + item['armor_category:'].name + '</p>');
       } else {
         $listData.append('<p>Armor Category: ' + item['armor_category:'] + '</p>');
@@ -152,19 +180,44 @@ function createList(newData) {
     } else if (item.gear_category !== undefined) {
       $listData.append('<p>Gear Category: ' + item.gear_category + '</p>');
     }
-    if (item.damage.dice_count !== undefined && item.damage.dice_value !== undefined && item.damage.damage_type.name !== undefined) {
-      $listData.append('<p>Damage : ' + item.damage.dice_count + "d" + item.damage.dice_value + ": " + item.damage.damage_type.name + '</p>');
+    if (item.damage !== undefined) {
+      if (item.damage.dice_count !== undefined && item.damage.dice_value !== undefined) {
+        if (item.damage.damage_type !== undefined) {
+          $listData.append('<p>Damage : ' + item.damage.dice_count + "d" + item.damage.dice_value + " - " + item.damage.damage_type.name + '</p>');
+        } else if (item.damage.type !== undefined) {
+          $listData.append('<p>Damage : ' + item.damage.dice_count + "d" + item.damage.dice_value + " - " + item.damage.type.name + '</p>');
+        }
+      }
+    }
+    if (item.armor_class !== undefined) {
+      $listData.append('<p>Armor Class: ' + item.armor_class.base + ' - MaxDex: ' + item.armor_class.max_bonus + ' - DexBonus: ' + item.armor_class.dex_bonus + '</p>');
+    }
+    if (item.str_minimum !== undefined) {
+      $listData.append('<p>Minimum Strength Required: ' + item.str_minimum + '</p>');
+    }
+    if (item.stealth_disadvantage !== undefined) {
+      $listData.append('<p>Stealth Disadvantage: ' + item.stealth_disadvantage + '</p>');
     }
     if (item.weight !== undefined) {
       $listData.append('<p>Weight: ' + item.weight + ' lbs</p>');
     }
 
+    if (item.desc !== undefined && Array.isArray(item.desc)) {
+      $listData.append('<p>Description</p>');
+      item.desc.forEach(function(element) {
+        if (element !== undefined && typeof element === 'string') {
+          $listData.append('<p>' + element + '</p>');
+        }
+      });
+    }
     /*This is the end of the data population, boy that's a lot of data...*/
 
     $newListItem.children('button').click(makeAppear);
     $('#searchResult ul').append($newListItem);
   }
 }
+
+
 
 function makeAppear(event) {
   if (this.parentNode.childNodes[1].style.display === 'none') {
