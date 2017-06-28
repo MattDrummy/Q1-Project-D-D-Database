@@ -96,6 +96,11 @@ main {
 
 .thumbnail img {
   height: 350px;
+  opacity: 0.5;
+}
+
+.thumbnail:hover img{
+  opacity: 1;
 }
 
 .indexPage a {
@@ -260,5 +265,8 @@ footer>a {
   .classInfo img {
     height: 200px;
     width: 120px;
+  }
+  .thumbnail img {
+    opacity: 1;
   }
 }
