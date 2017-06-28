@@ -40,31 +40,32 @@
   <main>
     <section class="intro">
       <h1>Welcome to the Hall of Heroes</h1>
-      <p>Here you can find information on classes, including their level up information.  Of course, this is meant to be a system reference, for more detailed explanations, please refer to the book.</p>
+      <p>Here you can find information on classes, including their level up information. Of course, this is meant to be a system reference, for more detailed explanations, please refer to the book.</p>
     </section>
     <!--Barbarian-->
 
-    <section id="Barbarian" class="className classes-dropdown">
-      <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBarbarian" aria-expanded="false" aria-controls="collapseExample">
-          <h2>Barbarian</h2>
-        </button>
+    <section id="barbarian" class="className classes-dropdown">
+      <button value="barbarian" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBarbarian" aria-expanded="false" aria-controls="collapseExample">
+        <h2>Barbarian</h2>
+      </button>
       <div class="collapse class-collapse" id="collapseBarbarian">
-        <div id="BarbarianInfo" class="well">
-          <!--Barbarian Information-->
+        <div class="well">
+          <article class="classInfo container">
+            <img src="https://vignette3.wikia.nocookie.net/pathfinder/images/0/0b/Amiri.jpg/revision/latest?cb=20080602015712" alt="Barbarian Dungeons and Dragons">
+            <div class="col" id="barbarianInfo">
+              <!--Barbarian Information-->
+            </div>
+          </article>
 
           <!--Barbarian Level Button-->
-          <section class="classes-dropdown">
+          <section class="classesLevel classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBarbarianLevel" aria-expanded="false" aria-controls="collapseExample">
-                  <h2>Barbarian Levels</h2>
-                </button>
+                <h2>Barbarian Levels</h2>
+              </button>
             <div class="collapse class-collapse" id="collapseBarbarianLevel">
-              <div id="BarbarianLevel" class="well">
-                <!--Barbarian Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table  id="barbarianLevel" class="table table-striped">
+                  <!--Barbarian Level Information-->
                 </table>
               </div>
             </div>
@@ -76,27 +77,28 @@
 
     <!--Bard-->
 
-    <section id="Bard" class="className classes-dropdown">
+    <section id="bard" class="className classes-dropdown">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBard" aria-expanded="false" aria-controls="collapseExample">
-          <h2>Bard</h2>
-        </button>
+        <h2>Bard</h2>
+      </button>
       <div class="collapse class-collapse" id="collapseBard">
-        <div id="BardInfo" class="well">
-          <!--Bard Information-->
+        <div  class="well">
+          <article class="classInfo container">
+            <img src="https://vignette3.wikia.nocookie.net/pathfinder/images/e/ef/Lem.jpg/revision/latest?cb=20080602015840" alt="Bard Dungeons and Dragons">
+            <div id="bardInfo">
+              <!--Bard Information-->
+            </div>
+          </article>
 
           <!--Bard Level Button-->
           <section class="classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBardLevel" aria-expanded="false" aria-controls="collapseExample">
-                  <h2>Bard Levels</h2>
-                </button>
+              <h2>Bard Levels</h2>
+            </button>
             <div class="collapse class-collapse" id="collapseBardLevel">
-              <div id="BardLevel" class="well">
-                <!--Bard Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table id="bardLevel" class="table table-striped">
+                  <!--Bard Level Information-->
                 </table>
               </div>
             </div>
@@ -108,27 +110,27 @@
 
     <!--Cleric-->
 
-    <section id="Cleric" class="className classes-dropdown">
+    <section id="cleric" class="className classes-dropdown">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCleric" aria-expanded="false" aria-controls="collapseExample">
-          <h2>Cleric</h2>
-        </button>
+        <h2>Cleric</h2>
+      </button>
       <div class="collapse class-collapse" id="collapseCleric">
-        <div id="ClericInfo" class="well">
-          <!--Cleric Information-->
-
+        <div class="well">
+          <article class="classInfo container">
+            <img src="https://vignette3.wikia.nocookie.net/pathfinder/images/2/23/Kyra.jpg/revision/latest?cb=20080602015823" alt="Cleric Dungeons and Dragons">
+            <div id="clericInfo">
+              <!--Cleric Information-->
+            </div>
+          </article>
           <!--Cleric Level Button-->
           <section class="classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseClericLevel" aria-expanded="false" aria-controls="collapseExample">
-                  <h2>Cleric Levels</h2>
-                </button>
+              <h2>Cleric Levels</h2>
+            </button>
             <div class="collapse class-collapse" id="collapseClericLevel">
-              <div id="ClericLevel" class="well">
-                <!--Cleric Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table  id="clericLevel" class="table table-striped">
+                  <!--Cleric Level Information-->
                 </table>
               </div>
             </div>
@@ -140,27 +142,28 @@
 
     <!--Druid-->
 
-    <section id="Druid" class="className classes-dropdown">
+    <section id="druid" class="className classes-dropdown">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDruid" aria-expanded="false" aria-controls="collapseExample">
-          <h2>Druid</h2>
-        </button>
+        <h2>Druid</h2>
+      </button>
       <div class="collapse class-collapse" id="collapseDruid">
-        <div id="DruidInfo" class="well">
-          <!--Druid Information-->
+        <div class="well">
+          <article class="classInfo container">
+            <img src="https://vignette2.wikia.nocookie.net/pathfinder/images/5/52/Lini.jpg/revision/latest?cb=20080602015131" alt="Druid Dungeons and Dragons">
+            <div id="druidInfo" >
+              <!--Druid Information-->
+            </div>
+          </article>
 
           <!--Druid Level Button-->
           <section class="classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDruidLevel" aria-expanded="false" aria-controls="collapseExample">
-                  <h2>Druid Levels</h2>
-                </button>
+              <h2>Druid Levels</h2>
+            </button>
             <div class="collapse class-collapse" id="collapseDruidLevel">
-              <div id="DruidLevel" class="well">
-                <!--Druid Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table  id="druidLevel" class="table table-striped">
+                  <!--Druid Level Information-->
                 </table>
               </div>
             </div>
@@ -172,27 +175,28 @@
 
     <!--Fighter-->
 
-    <section id="Fighter" class="className classes-dropdown">
+    <section id="fighter" class="className classes-dropdown">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFighter" aria-expanded="false" aria-controls="collapseExample">
         <h2>Fighter</h2>
       </button>
       <div class="collapse class-collapse" id="collapseFighter">
-        <div id="FighterInfo" class="well">
-          <!--Fighter Information-->
+        <div class="well">
+          <article class="classInfo container">
+            <img src="http://www.paperspencils.com/wp-content/uploads/2013/02/5ecb516bccb04845a45cb828341aa967.jpg" alt="Fighter Dungeons and Dragons">
+            <div id="fighterInfo">
+              <!--Fighter Information-->
+            </div>
+          </article>
 
           <!--Fighter Level Button-->
           <section class="classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFighterLevel" aria-expanded="false" aria-controls="collapseExample">
-                <h2>Fighter Levels</h2>
-              </button>
+              <h2>Fighter Levels</h2>
+            </button>
             <div class="collapse class-collapse" id="collapseFighterLevel">
-              <div id="FighterLevel" class="well">
-                <!--Fighter Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table id="fighterLevel" class="table table-striped">
+                  <!--Fighter Level Information-->
                 </table>
               </div>
             </div>
@@ -204,27 +208,27 @@
 
     <!--Monk-->
 
-    <section id="Monk" class="className classes-dropdown">
+    <section id="monk" class="className classes-dropdown">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMonk" aria-expanded="false" aria-controls="collapseExample">
         <h2>Monk</h2>
       </button>
       <div class="collapse class-collapse" id="collapseMonk">
-        <div id="MonkInfo" class="well">
-          <!--Monk Information-->
-
+        <div class="well">
+          <article class="classInfo container">
+            <img src="http://www.paperspencils.com/wp-content/uploads/2013/02/PZO9009-Monk.jpg" alt="Monk Dungeons and Dragons">
+            <div id="monkInfo">
+              <!--Monk Information-->
+            </div>
+          </article>
           <!--Monk Level Button-->
           <section class="classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMonkLevel" aria-expanded="false" aria-controls="collapseExample">
-                <h2>Monk Levels</h2>
-              </button>
+              <h2>Monk Levels</h2>
+            </button>
             <div class="collapse class-collapse" id="collapseMonkLevel">
-              <div id="MonkLevel" class="well">
-                <!--Monk Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table  id="monkLevel" class="table table-striped">
+                  <!--Monk Level Information-->
                 </table>
               </div>
             </div>
@@ -236,27 +240,27 @@
 
     <!--Paladin-->
 
-    <section id="Paladin" class="className classes-dropdown">
+    <section id="paladin" class="className classes-dropdown">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePaladin" aria-expanded="false" aria-controls="collapseExample">
         <h2>Paladin</h2>
       </button>
       <div class="collapse class-collapse" id="collapsePaladin">
-        <div id="PaladinInfo" class="well">
-          <!--Paladin Information-->
-
+        <div class="well">
+          <article class="classInfo container">
+            <img src="https://vignette1.wikia.nocookie.net/pathfinder/images/2/24/Seelah.jpg/revision/latest?cb=20080602015933" alt="Paladin Dungeons and Dragons">
+            <div id="paladinInfo">
+              <!--Paladin Information-->
+            </div>
+          </article>
           <!--Paladin Level Button-->
           <section class="classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapsePaladinLevel" aria-expanded="false" aria-controls="collapseExample">
-                <h2>Paladin Levels</h2>
-              </button>
+              <h2>Paladin Levels</h2>
+            </button>
             <div class="collapse class-collapse" id="collapsePaladinLevel">
-              <div id="PaladinLevel" class="well">
-                <!--Paladin Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table id="paladinLevel" class="table table-striped">
+                  <!--Paladin Level Information-->
                 </table>
               </div>
             </div>
@@ -268,27 +272,27 @@
 
     <!--Ranger-->
 
-    <section id="Ranger" class="className classes-dropdown">
+    <section id="ranger" class="className classes-dropdown">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseRanger" aria-expanded="false" aria-controls="collapseExample">
         <h2>Ranger</h2>
       </button>
       <div class="collapse class-collapse" id="collapseRanger">
-        <div id="RangerInfo" class="well">
-          <!--Ranger Information-->
-
+        <div class="well">
+          <article class="classInfo container">
+            <img src="http://www.paperspencils.com/wp-content/uploads/2013/02/DD.jpg" alt="Ranger Dungeons and Dragons">
+            <div id="rangerInfo">
+              <!--Ranger Information-->
+            </div>
+          </article>
           <!--Ranger Level Button-->
           <section class="classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseRangerLevel" aria-expanded="false" aria-controls="collapseExample">
-                <h2>Ranger Levels</h2>
-              </button>
+              <h2>Ranger Levels</h2>
+            </button>
             <div class="collapse class-collapse" id="collapseRangerLevel">
-              <div id="RangerLevel" class="well">
-                <!--Ranger Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table id="rangerLevel" class="table table-striped">
+                  <!--Ranger Level Information-->
                 </table>
               </div>
             </div>
@@ -300,27 +304,27 @@
 
     <!--Rogue-->
 
-    <section id="Rogue" class="className classes-dropdown">
+    <section id="rogue" class="className classes-dropdown">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseRogue" aria-expanded="false" aria-controls="collapseExample">
         <h2>Rogue</h2>
       </button>
       <div class="collapse class-collapse" id="collapseRogue">
-        <div id="RogueInfo" class="well">
-          <!--Rogue Information-->
-
+        <div class="well">
+          <article class="classInfo container">
+            <img src="https://vignette3.wikia.nocookie.net/pathfinder/images/1/1f/Merisiel.jpg/revision/latest?cb=20080602015857" alt="Rogue Dungeons and Dragons">
+            <div id="rogueInfo">
+              <!--Rogue Information-->
+            </div>
+          </article>
           <!--Rogue Level Button-->
           <section class="classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseRogueLevel" aria-expanded="false" aria-controls="collapseExample">
-                <h2>Rogue Levels</h2>
-              </button>
+              <h2>Rogue Levels</h2>
+            </button>
             <div class="collapse class-collapse" id="collapseRogueLevel">
-              <div id="RogueLevel" class="well">
-                <!--Rogue Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table id="rogueLevel" class="table table-striped">
+                  <!--Rogue Level Information-->
                 </table>
               </div>
             </div>
@@ -332,27 +336,27 @@
 
     <!--Sorcerer-->
 
-    <section id="Sorcerer" class="className classes-dropdown">
+    <section id="sorcerer" class="className classes-dropdown">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSorcerer" aria-expanded="false" aria-controls="collapseExample">
         <h2>Sorcerer</h2>
       </button>
       <div class="collapse class-collapse" id="collapseSorcerer">
-        <div id="SorcererInfo" class="well">
-          <!--Sorcerer Information-->
-
+        <div class="well">
+          <article class="classInfo container">
+            <img src="https://lh4.googleusercontent.com/tg9HtgkrgPAeC-xvMR269jmBpleKlvdqtvww1-VK_Ig1a74acPq7focn2O1vvR-Hhsc9tELBMppHn-NRSQGhMeCAof7q0JljOwHvz1N2Tx_mRAaLddrqqYB_r3ZQJnzrmFQTrjuJ" alt="Sorcerer Dungeons and Dragons">
+            <div id="sorcererInfo">
+              <!--Sorcerer Information-->
+            </div>
+          </article>
           <!--Sorcerer Level Button-->
           <section class="classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSorcererLevel" aria-expanded="false" aria-controls="collapseExample">
-                <h2>Sorcerer Levels</h2>
-              </button>
+              <h2>Sorcerer Levels</h2>
+            </button>
             <div class="collapse class-collapse" id="collapseSorcererLevel">
-              <div id="SorcererLevel" class="well">
-                <!--Sorcerer Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table id="sorcererLevel" class="table table-striped">
+                  <!--Sorcerer Level Information-->
                 </table>
               </div>
             </div>
@@ -364,27 +368,27 @@
 
     <!--Warlock-->
 
-    <section id="Warlock" class="className classes-dropdown">
+    <section id="warlock" class="className classes-dropdown">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWarlock" aria-expanded="false" aria-controls="collapseExample">
         <h2>Warlock</h2>
       </button>
       <div class="collapse class-collapse" id="collapseWarlock">
-        <div id="WarlockInfo" class="well">
-          <!--Warlock Information-->
-
+        <div class="well">
+          <article class="classInfo container">
+            <img src="https://ci3.googleusercontent.com/proxy/SPIm7cLF8SxfCUE6Fxg8lkP-9p6-V13M4kugL13s17OXPFmJee0QVTpqplQ4fAV9RjdmeO8TMG_MsGzFEJpAEXKcVL7QTCNVO9af0aI818MBDSS8T75z=s0-d-e1-ft" alt="Warlock Dungeons and Dragons">
+            <div id="warlockInfo">
+              <!--Warlock Information-->
+            </div>
+          </article>
           <!--Warlock Level Button-->
           <section class="classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWarlockLevel" aria-expanded="false" aria-controls="collapseExample">
-                <h2>Warlock Levels</h2>
-              </button>
+              <h2>Warlock Levels</h2>
+            </button>
             <div class="collapse class-collapse" id="collapseWarlockLevel">
-              <div id="WarlockLevel" class="well">
-                <!--Warlock Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table id="warlockLevel" class="table table-striped">
+                  <!--Warlock Level Information-->
                 </table>
               </div>
             </div>
@@ -396,27 +400,27 @@
 
     <!--Wizard-->
 
-    <section id="Wizard" class="className classes-dropdown">
+    <section id="wizard" class="className classes-dropdown">
       <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWizard" aria-expanded="false" aria-controls="collapseExample">
         <h2>Wizard</h2>
       </button>
       <div class="collapse class-collapse" id="collapseWizard">
-        <div id="WizardInfo" class="well">
-          <!--Wizard Information-->
-
+        <div class="well">
+          <article class="classInfo container">
+            <img src="http://www.paperspencils.com/wp-content/uploads/2013/03/2bb27a0da36640708ac8da38ab9e202d.jpg" alt="Wizard Dungeons and Dragons">
+            <div id="wizardInfo">
+              <!--Wizard Information-->
+            </div>
+          </article>
           <!--Wizard Level Button-->
           <section class="classes-dropdown">
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseWizardLevel" aria-expanded="false" aria-controls="collapseExample">
-                <h2>Wizard Levels</h2>
-              </button>
+              <h2>Wizard Levels</h2>
+            </button>
             <div class="collapse class-collapse" id="collapseWizardLevel">
-              <div id="WizardLevel" class="well">
-                <!--Wizard Level Information-->
-                <table class="table table-striped">
-                  <tr>
-                    <th>Level</th>
-                    <th>Receive</th>
-                  </tr>
+              <div class="well">
+                <table id="wizardLevel" class="table table-striped">
+                  <!--Wizard Level Information-->
                 </table>
 
               </div>
