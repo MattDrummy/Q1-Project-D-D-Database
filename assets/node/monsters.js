@@ -136,9 +136,9 @@ function createList(newData) {
     $listData.append('<p>Perception: ' + item.perception + '</p>');
     $listData.append('<p>Languages: ' + item.languages + '</p>');
     $listData.append(`<p>
-      <a
-      href="https://www.google.com/search?safe=on&site=&tbm=isch&source=hp&biw=1440&bih=775&q=Dungeons+and+Dragons+${item.name.toLowerCase()}">
-      Google Image Search</a>
+      <a href="https://www.google.com/search?safe=on&site=&tbm=isch&source=hp&biw=1440&bih=775&q=Dungeons+and+Dragons+${item.name.toLowerCase()}">
+      Google Image Search
+      </a></p>
     `)
     $listData.append($listSup);
     $listSup.append($listSupDiv);
