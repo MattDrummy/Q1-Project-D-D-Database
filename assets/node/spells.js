@@ -110,6 +110,20 @@ function createList(newData) {
     $listData.append('<p>Level: ' + item.level + '</p>');
     $listData.append('<p>Casting Time: ' + item.casting_time + '</p>');
     $listData.append('<p>Duration: ' + item.duration + '</p>');
+    $listData.append('<p>Range: ' + item.range + '</p>');
+    if (item.components !== undefined) {
+      if (Array.isArray(item.components) && item.components.length > 0) {
+        var components = ""
+        for (var c = 0; c < item.components.length; c++) {
+          var comp = (item.components[c] === 'V' ? 'Verbal' : item.components[c] === 'S' ? 'Symantic' : item.components[c] === 'M' ? 'Material' : item.components[c])
+          components += comp + " ";
+        }
+        $listData.append(`<p>Components: ${components}</p>`);
+      } else {
+        var comp = (item.components === 'V' ? 'Verbal' : item.components === 'S' ? 'Symantic' : item.components === 'M' ? 'Material' : item.components)
+        $listData.append(`<p>Components: ${comp}</p>`);
+      }
+    }
     $listData.append('<p>Concentration: ' + item.concentration + '</p>');
     $listData.append('<p>Ritual: ' + item.ritual + '</p>');
     var tempStr = "";
