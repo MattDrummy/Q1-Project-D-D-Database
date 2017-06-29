@@ -152,68 +152,75 @@ function searchDataByForm(data, category1, category2) {
 
 function createList(newData) {
   $searchResult.empty();
-  $searchResult.append('<ul></ul>')
-  for (var i = 0; i < newData.length; i++) {
-    var item = newData[i];
-    var $newListItem = $('<li><button class="listBtn btn btn-default" type="button">' + item.name + '</button></li>');
-    var $listData = $('<article class="list"></article>');
-    $listData.css('display', 'none');
-    $newListItem.append($listData);
-    /*The following code represents the population of data, skip ahead to the next comment for the rest of the code*/
-    // $listData.append('<p>' + item + '</p>');
-    if (item.cost.quantity !== undefined && item.cost.unit !== undefined) {
-      $listData.append('<p>Cost: ' + item.cost.quantity + item.cost.unit + '</p>');
-    }
-    if (item.category_range !== undefined) {
-      $listData.append('<p>Weapon Category: ' + item.category_range + '</p>');
-    } else if (item['armor_category:'] !== undefined) {
-      if (item['armor_category:'].name !== undefined) {
-        $listData.append('<p>Armor Category: ' + item['armor_category:'].name + '</p>');
-      } else {
+  if (newData.length === 0) {
+    $("#searchResult").append(`
+      <h2>Sorry, no results found</h2><br>
+      <p>Your search may have pulled up no results, or perhaps you misspelled something?  Wizards of the Coast may not have released the information for the public SRD.</p>
+      `);
+  } else {
+    $searchResult.append('<ul></ul>')
+    for (var i = 0; i < newData.length; i++) {
+      var item = newData[i];
+      var $newListItem = $('<li><button class="listBtn btn btn-default" type="button">' + item.name + '</button></li>');
+      var $listData = $('<article class="list"></article>');
+      $listData.css('display', 'none');
+      $newListItem.append($listData);
+      /*The following code represents the population of data, skip ahead to the next comment for the rest of the code*/
+      // $listData.append('<p>' + item + '</p>');
+      if (item.cost.quantity !== undefined && item.cost.unit !== undefined) {
+        $listData.append('<p>Cost: ' + item.cost.quantity + item.cost.unit + '</p>');
+      }
+      if (item.category_range !== undefined) {
+        $listData.append('<p>Weapon Category: ' + item.category_range + '</p>');
+      } else if (item['armor_category:'] !== undefined) {
+        if (item['armor_category:'].name !== undefined) {
+          $listData.append('<p>Armor Category: ' + item['armor_category:'].name + '</p>');
+        } else {
+          $listData.append('<p>Armor Category: ' + item['armor_category:'] + '</p>');
+        }
         $listData.append('<p>Armor Category: ' + item['armor_category:'] + '</p>');
+      } else if (item.vehicle_category !== undefined) {
+        $listData.append('<p>Vehicle Category: ' + item.vehicle_category + '</p>')
+      } else if (item.tool_category !== undefined) {
+        $listData.append('<p>Tool Category: ' + item.tool_category + '</p>');
+      } else if (item.gear_category !== undefined) {
+        $listData.append('<p>Gear Category: ' + item.gear_category + '</p>');
       }
-      $listData.append('<p>Armor Category: ' + item['armor_category:'] + '</p>');
-    } else if (item.vehicle_category !== undefined) {
-      $listData.append('<p>Vehicle Category: ' + item.vehicle_category + '</p>')
-    } else if (item.tool_category !== undefined) {
-      $listData.append('<p>Tool Category: ' + item.tool_category + '</p>');
-    } else if (item.gear_category !== undefined) {
-      $listData.append('<p>Gear Category: ' + item.gear_category + '</p>');
-    }
-    if (item.damage !== undefined) {
-      if (item.damage.dice_count !== undefined && item.damage.dice_value !== undefined) {
-        if (item.damage.damage_type !== undefined) {
-          $listData.append('<p>Damage : ' + item.damage.dice_count + "d" + item.damage.dice_value + " - " + item.damage.damage_type.name + '</p>');
-        } else if (item.damage.type !== undefined) {
-          $listData.append('<p>Damage : ' + item.damage.dice_count + "d" + item.damage.dice_value + " - " + item.damage.type.name + '</p>');
+      if (item.damage !== undefined) {
+        if (item.damage.dice_count !== undefined && item.damage.dice_value !== undefined) {
+          if (item.damage.damage_type !== undefined) {
+            $listData.append('<p>Damage : ' + item.damage.dice_count + "d" + item.damage.dice_value + " - " + item.damage.damage_type.name + '</p>');
+          } else if (item.damage.type !== undefined) {
+            $listData.append('<p>Damage : ' + item.damage.dice_count + "d" + item.damage.dice_value + " - " + item.damage.type.name + '</p>');
+          }
         }
       }
-    }
-    if (item.armor_class !== undefined) {
-      $listData.append('<p>Armor Class: ' + item.armor_class.base + ' - MaxDex: ' + item.armor_class.max_bonus + ' - DexBonus: ' + item.armor_class.dex_bonus + '</p>');
-    }
-    if (item.str_minimum !== undefined) {
-      $listData.append('<p>Minimum Strength Required: ' + item.str_minimum + '</p>');
-    }
-    if (item.stealth_disadvantage !== undefined) {
-      $listData.append('<p>Stealth Disadvantage: ' + item.stealth_disadvantage + '</p>');
-    }
-    if (item.weight !== undefined) {
-      $listData.append('<p>Weight: ' + item.weight + ' lbs</p>');
-    }
+      if (item.armor_class !== undefined) {
+        $listData.append('<p>Armor Class: ' + item.armor_class.base + ' - MaxDex: ' + item.armor_class.max_bonus + ' - DexBonus: ' + item.armor_class.dex_bonus + '</p>');
+      }
+      if (item.str_minimum !== undefined) {
+        $listData.append('<p>Minimum Strength Required: ' + item.str_minimum + '</p>');
+      }
+      if (item.stealth_disadvantage !== undefined) {
+        $listData.append('<p>Stealth Disadvantage: ' + item.stealth_disadvantage + '</p>');
+      }
+      if (item.weight !== undefined) {
+        $listData.append('<p>Weight: ' + item.weight + ' lbs</p>');
+      }
 
-    if (item.desc !== undefined && Array.isArray(item.desc)) {
-      $listData.append('<p>Description</p>');
-      item.desc.forEach(function(element) {
-        if (element !== undefined && typeof element === 'string') {
-          $listData.append('<p>' + element + '</p>');
-        }
-      });
-    }
-    /*This is the end of the data population, boy that's a lot of data...*/
+      if (item.desc !== undefined && Array.isArray(item.desc)) {
+        $listData.append('<p>Description</p>');
+        item.desc.forEach(function(element) {
+          if (element !== undefined && typeof element === 'string') {
+            $listData.append('<p>' + element + '</p>');
+          }
+        });
+      }
+      /*This is the end of the data population, boy that's a lot of data...*/
 
-    $newListItem.children('button').click(makeAppear);
-    $('#searchResult ul').append($newListItem);
+      $newListItem.children('button').click(makeAppear);
+      $('#searchResult ul').append($newListItem);
+    }
   }
 }
 

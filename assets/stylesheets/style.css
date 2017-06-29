@@ -3,6 +3,8 @@
 body {
   font-family: 'MedievalSharp', cursive;
   background-image: url("https://inspirationhut.net/wp-content/uploads/2012/11/Grungy-Paper-Texture-3.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }

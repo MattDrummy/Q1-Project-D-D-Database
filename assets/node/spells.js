@@ -93,76 +93,83 @@ function searchDataByForm(data, spellLevel, spellSchool, spellClass) {
 
 function createList(newData) {
   $searchResult.empty();
-  $searchResult.append('<ul></ul>')
-  for (var i = 0; i < newData.length; i++) {
-    var item = newData[i];
-    var $newListItem = $('<li><button class="listBtn btn btn-default" type="button">' + item.name + '</button></li>');
-    var $listData = $('<article class="list"></article>');
-    var $listSup = $('<article class="list"><button class="list listBtn btn btn-default">DESCRIPTION:</button></div>');
-    var $listSupDiv = $('<div></div>');
-    $listSupDiv.css('display', 'none');
-    $listData.css('display', 'none');
-    $newListItem.append($listData);
+  if (newData.length === 0) {
+    $("#searchResult").append(`
+      <h2>Sorry, no results found</h2><br>
+      <p>Your search may have pulled up no results, or perhaps you misspelled something?  Wizards of the Coast may not have released the information for the public SRD.</p>
+      `);
+  } else {
+    $searchResult.append('<ul></ul>')
+    for (var i = 0; i < newData.length; i++) {
+      var item = newData[i];
+      var $newListItem = $('<li><button class="listBtn btn btn-default" type="button">' + item.name + '</button></li>');
+      var $listData = $('<article class="list"></article>');
+      var $listSup = $('<article class="list"><button class="list listBtn btn btn-default">DESCRIPTION:</button></div>');
+      var $listSupDiv = $('<div></div>');
+      $listSupDiv.css('display', 'none');
+      $listData.css('display', 'none');
+      $newListItem.append($listData);
 
-    /*The following code represents the population of data, skip ahead to the next comment for the rest of the code*/
-    // $listData.append('<p>' + '</p>');
-    $listData.append('<p>School: ' + item.school.name + '</p>');
-    $listData.append('<p>Level: ' + item.level + '</p>');
-    $listData.append('<p>Casting Time: ' + item.casting_time + '</p>');
-    $listData.append('<p>Duration: ' + item.duration + '</p>');
-    $listData.append('<p>Range: ' + item.range + '</p>');
-    if (item.components !== undefined) {
-      if (Array.isArray(item.components) && item.components.length > 0) {
-        var components = ""
-        for (var c = 0; c < item.components.length; c++) {
-          var comp = (item.components[c] === 'V' ? 'Verbal' : item.components[c] === 'S' ? 'Symantic' : item.components[c] === 'M' ? 'Material' : item.components[c])
-          components += comp + " ";
+      /*The following code represents the population of data, skip ahead to the next comment for the rest of the code*/
+      // $listData.append('<p>' + '</p>');
+      $listData.append('<p>School: ' + item.school.name + '</p>');
+      $listData.append('<p>Level: ' + item.level + '</p>');
+      $listData.append('<p>Casting Time: ' + item.casting_time + '</p>');
+      $listData.append('<p>Duration: ' + item.duration + '</p>');
+      $listData.append('<p>Range: ' + item.range + '</p>');
+      if (item.components !== undefined) {
+        if (Array.isArray(item.components) && item.components.length > 0) {
+          var components = ""
+          for (var c = 0; c < item.components.length; c++) {
+            var comp = (item.components[c] === 'V' ? 'Verbal' : item.components[c] === 'S' ? 'Symantic' : item.components[c] === 'M' ? 'Material' : item.components[c])
+            components += comp + " ";
+          }
+          $listData.append(`<p>Components: ${components}</p>`);
+        } else {
+          var comp = (item.components === 'V' ? 'Verbal' : item.components === 'S' ? 'Symantic' : item.components === 'M' ? 'Material' : item.components)
+          $listData.append(`<p>Components: ${comp}</p>`);
         }
-        $listData.append(`<p>Components: ${components}</p>`);
-      } else {
-        var comp = (item.components === 'V' ? 'Verbal' : item.components === 'S' ? 'Symantic' : item.components === 'M' ? 'Material' : item.components)
-        $listData.append(`<p>Components: ${comp}</p>`);
       }
-    }
-    $listData.append('<p>Concentration: ' + item.concentration + '</p>');
-    $listData.append('<p>Ritual: ' + item.ritual + '</p>');
-    var tempStr = "";
-    for (var c = 0; c < item.classes.length; c++) {
-      if (c === item.classes.length - 1) {
-        tempStr += item.classes[c].name;
-      } else {
-        tempStr += item.classes[c].name + ", ";
+      $listData.append('<p>Concentration: ' + item.concentration + '</p>');
+      $listData.append('<p>Ritual: ' + item.ritual + '</p>');
+      var tempStr = "";
+      for (var c = 0; c < item.classes.length; c++) {
+        if (c === item.classes.length - 1) {
+          tempStr += item.classes[c].name;
+        } else {
+          tempStr += item.classes[c].name + ", ";
+        }
       }
-    }
-    $listData.append('<p>Classes: ' + tempStr + '</p>');
-    if (item.material) {
-      $listData.append('<p>Materials: ' + item.material + '<p>');
-    }
-    if (item.page) {
-      $listData.append('<p>Page Reference: ' + item.page + '</p>');
-    }
-    $listData.append($listSup);
-    $listSup.append($listSupDiv);
-    if (item.desc !== undefined && Array.isArray(item.desc)) {
-      $listSupDiv.append('<p> Description: </p>');
-      for (var d = 0; d < item.desc.length; d++) {
-        $listSupDiv.append('<p>' + item.desc[d] + '</p>');
+      $listData.append('<p>Classes: ' + tempStr + '</p>');
+      if (item.material) {
+        $listData.append('<p>Materials: ' + item.material + '<p>');
       }
-    }
-    if (item.higher_level && Array.isArray(item.higher_level)) {
-      $listSupDiv.append('<p>Higher Level: </p>');
-      for (var h = 0; h < item.higher_level.length; h++) {
-        $listSupDiv.append('<p>' + item.higher_level[h] + '</p>');
+      if (item.page) {
+        $listData.append('<p>Page Reference: ' + item.page + '</p>');
       }
-    }
+      $listData.append($listSup);
+      $listSup.append($listSupDiv);
+      if (item.desc !== undefined && Array.isArray(item.desc)) {
+        $listSupDiv.append('<p> Description: </p>');
+        for (var d = 0; d < item.desc.length; d++) {
+          $listSupDiv.append('<p>' + item.desc[d] + '</p>');
+        }
+      }
+      if (item.higher_level && Array.isArray(item.higher_level)) {
+        $listSupDiv.append('<p>Higher Level: </p>');
+        for (var h = 0; h < item.higher_level.length; h++) {
+          $listSupDiv.append('<p>' + item.higher_level[h] + '</p>');
+        }
+      }
 
 
 
-    /*This is the end of the data population, boy that's a lot of data...*/
+      /*This is the end of the data population, boy that's a lot of data...*/
 
-    $newListItem.children('button').click(makeAppear);
-    $listSup.children('button').click(makeAppear);
-    $('#searchResult ul').append($newListItem);
+      $newListItem.children('button').click(makeAppear);
+      $listSup.children('button').click(makeAppear);
+      $('#searchResult ul').append($newListItem);
+    }
   }
 }
 
