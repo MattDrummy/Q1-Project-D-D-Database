@@ -44,21 +44,30 @@ function populateClass(data) {
     `);
   var tempStr = ""
   for (var i = 0; i < otherProficienciesArray.length; i++) {
-    tempStr += ` [${otherProficienciesArray[i].name}] `;
+    if (i === otherProficienciesArray.length - 1) {
+      tempStr += `${otherProficienciesArray[i].name}`;
+    }
+      tempStr += `${otherProficienciesArray[i].name}, `;
   }
   $classInfo.append(`
     <p>Proficiencies: ${tempStr}
     `)
   var tempStr = ""
   for (var i = 0; i < skillProficienciesArray.length; i++) {
-    tempStr += ` [${skillProficienciesArray[i].name}] `;
+    if (i === skillProficienciesArray.length - 1) {
+      tempStr += `${skillProficienciesArray[i].name}`;
+    }
+      tempStr += `${skillProficienciesArray[i].name}, `;
   }
   $classInfo.append(`
     <p>Choose ${skillChoices}: ${tempStr}
     `)
   var tempStr = "";
   for (var i = 0; i < savingThrowsArray.length; i++) {
-    tempStr += ` [${savingThrowsArray[i].name}] `;
+    if (i === savingThrowsArray.length - 1) {
+      tempStr += `${savingThrowsArray[i].name}`;
+    }
+      tempStr += `${savingThrowsArray[i].name}, `;
   }
   $classInfo.append(`
     <p>Saving Throws: ${tempStr}
