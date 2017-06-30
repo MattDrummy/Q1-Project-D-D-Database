@@ -9,7 +9,7 @@
 # Welcome to the Dungeons and Dragons Fifth Edition Database!
 
 
-This code uses DnD5eapi found here: http://www.dnd5eapi.co/
+This code uses DnD5eapi found [here](http://www.dnd5eapi.co/)
 
 It also contains some material from Wizards of the Coast and Paizo.
 
