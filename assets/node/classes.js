@@ -46,8 +46,9 @@ function populateClass(data) {
   for (var i = 0; i < otherProficienciesArray.length; i++) {
     if (i === otherProficienciesArray.length - 1) {
       tempStr += `${otherProficienciesArray[i].name}`;
-    }
+    } else {
       tempStr += `${otherProficienciesArray[i].name}, `;
+    }
   }
   $classInfo.append(`
     <p>Proficiencies: ${tempStr}
@@ -56,8 +57,9 @@ function populateClass(data) {
   for (var i = 0; i < skillProficienciesArray.length; i++) {
     if (i === skillProficienciesArray.length - 1) {
       tempStr += `${skillProficienciesArray[i].name}`;
-    }
+    } else {
       tempStr += `${skillProficienciesArray[i].name}, `;
+    }
   }
   $classInfo.append(`
     <p>Choose ${skillChoices}: ${tempStr}
@@ -66,11 +68,12 @@ function populateClass(data) {
   for (var i = 0; i < savingThrowsArray.length; i++) {
     if (i === savingThrowsArray.length - 1) {
       tempStr += `${savingThrowsArray[i].name}`;
-    }
+    } else {
       tempStr += `${savingThrowsArray[i].name}, `;
+    }
   }
   $classInfo.append(`
-    <p>Saving Throws: ${tempStr}
+    <p>Saving Throws: ${tempStr}<p>
     `);
 
   if (!localStorage.getItem(`${data.name}levelData`)) {
