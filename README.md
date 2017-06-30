@@ -6,7 +6,7 @@ Wireframe: https://wireframe.cc/pro/pp/55b9ec63d94930
 
 Trello Board: https://trello.com/b/9OW47ilf
 
-# Heading 1 Welcome to the Dungeons and Dragons Fifth Edition Database!
+# Welcome to the Dungeons and Dragons Fifth Edition Database!
 
 
 This code uses DnD5eapi found here: http://www.dnd5eapi.co/
