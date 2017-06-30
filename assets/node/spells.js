@@ -161,9 +161,6 @@ function createList(newData) {
           $listSupDiv.append('<p>' + item.higher_level[h] + '</p>');
         }
       }
-
-
-
       /*This is the end of the data population, boy that's a lot of data...*/
 
       $newListItem.children('button').click(makeAppear);

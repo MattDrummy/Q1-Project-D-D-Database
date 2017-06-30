@@ -217,14 +217,24 @@ function populateClassLevel(levelData) {
   localStorage.setItem(`${levelData[0].class.name}LevelData`, JSON.stringify(levelData));
   var className = levelData[0].class.name;
   var $classLevel = $(`#${className.toLowerCase()}Level`);
-  var $thisHeader = $(
-    `<tr>
+  if (className.toLowerCase() === 'paladin') {
+    var $thisHeader = $(
+      `<tr>
+          <th class = "cellLevel">Level</th>
+          <th class = "cellAbility">Ability Bonus</th>
+          <th class = "cellProf">Prof-Bonus</th>
+          <th class = "cellFeatures">Features</th>
+      </tr>`);
+  } else {
+    var $thisHeader = $(
+      `<tr>
         <th class = "cellLevel">Level</th>
         <th class = "cellAbility">Ability Bonus</th>
         <th class = "cellProf">Prof-Bonus</th>
         <th class = "cellSpec">Class Specifics</th>
         <th class = "cellFeatures">Features</th>
-    </tr>`);
+      </tr>`);
+  }
   $classLevel.append($thisHeader);
   for (var i = 0; i < levelData.length; i++) {
     var $thisLevel = $('<tr></tr>');
@@ -245,53 +255,52 @@ function populateClassLevel(levelData) {
     for (var variable in classSpecificObject) {
       tempArray.push(variable);
     }
-    var $tempTd = $('<td class="cellSpec"></td>');
-    if (tempArray.length > 0) {
-      tempArray.forEach(function(element) {
+    if (className.toLowerCase() !== 'paladin') {
+      var $tempTd = $('<td class="cellSpec"></td>');
+      if (tempArray.length > 0) {
+        tempArray.forEach(function(element) {
 
-        switch (element) {
-          case 'martial_arts':
-            $tempTd.append(
-              `<p>
-                <u>${element}</u><br>
-                ${classSpecificObject[element].dice_count}d${classSpecificObject[element].dice_value}
-              </p>`)
-            break;
-          case 'aura_range':
-            $tempTd.append(`<p></p>`);
-            break;
-          case 'creating_spell_slots':
-            if (classSpecificObject[element].length > 0) {
-              $tempTd.append(`
-                <p><u>${element}</u></p>
-                `)
-              for (var i = 0; i < classSpecificObject[element].length; i++) {
+          switch (element) {
+            case 'martial_arts':
+              $tempTd.append(
+                `<p>
+                ${element}: ${classSpecificObject[element].dice_count}d${classSpecificObject[element].dice_value}
+                </p>`)
+              break;
+            case 'aura_range':
+              $tempTd.append(`<p></p>`);
+              break;
+            case 'creating_spell_slots':
+              if (classSpecificObject[element].length > 0) {
                 $tempTd.append(`
-                  <p>
-                    level: ${classSpecificObject[element][i].spell_slot_level}
-                    cost: ${classSpecificObject[element][i].sorcery_point_cost}
-                  </p>
+                  <p>${element}</p>
                   `)
+                for (var i = 0; i < classSpecificObject[element].length; i++) {
+                  $tempTd.append(`
+                    <p>
+                      level: ${classSpecificObject[element][i].spell_slot_level}
+                      cost: ${classSpecificObject[element][i].sorcery_point_cost}
+                    </p>
+                    `)
+                }
               }
-            }
-            break;
-          case 'sneak_attack':
-            $tempTd.append(`
-              <p>
-                <u>${element}</u><br>
-                ${classSpecificObject[element].dice_count}d${classSpecificObject[element].dice_value}
-              </p>
+              break;
+            case 'sneak_attack':
+              $tempTd.append(`
+                <p>
+                ${element}: ${classSpecificObject[element].dice_count}d${classSpecificObject[element].dice_value}
+                </p>
+                `)
+              break;
+            default:
+              $tempTd.append(`
+                <p>${element}: ${classSpecificObject[element]}</p>
               `)
-            break;
-          default:
-            $tempTd.append(`
-              <p>
-              <u>${element}</u><br>
-            ${classSpecificObject[element]}</p>
-            `)
-        }
-      })
+          }
+        })
+      }
     }
+
     $thisLevel.append($tempTd)
     var featuresArray = levelData[i].features;
     if (featuresArray.length > 0) {
