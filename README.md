@@ -1,10 +1,10 @@
 ![Image](assets/images/SSHome.png)
 
-Deployed Site: https://dungeons-and-dragons-database.firebaseapp.com/index.html
+[Deployed Site](https://dungeons-and-dragons-database.firebaseapp.com/index.html)
 
-Wireframe: https://wireframe.cc/pro/pp/55b9ec63d94930
+[Wireframe](https://wireframe.cc/pro/pp/55b9ec63d94930)
 
-Trello Board: https://trello.com/b/9OW47ilf
+[Trello Board](https://trello.com/b/9OW47ilf)
 
 # Welcome to the Dungeons and Dragons Fifth Edition Database!
 
